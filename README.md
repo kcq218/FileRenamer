@@ -19,11 +19,11 @@ FileRenamer project 1 out of 100 microprojects in C#
 *Optional*: Add screenshots, GIFs, or a link to a live demo if available.
 
 #features
-| Requirement Type     | Description                                                | Notes / Example |                                    | Accomplished | 
+| Requirement Type     | Description                                                | Notes / Example                                      | Accomplished | 
 |----------------------|------------------------------------------------------------|------------------------------------------------------|--------------|
 | Functional           | User inputs a folder path                             		  | Only files in the selected folder, no subfolders     |     N/A      |
 | Functional           | Rename all files with a sequential number             		  | e.g., File_1.txt, File_2.txt                         |     N/A      |
-| Functional           | Optional prefix for filenames                         		  | User can enter a prefix like Report_                 |     N/A      |
+| Functional           | Optional prefix for filenames                         		  | User can enter a prefix like Report                  |     N/A      |
 | Functional           | Preview filenames before renaming                     		  | Show old vs new filenames in console                 |     N/A      |
 | Functional           | Execute renaming after confirmation                   		  | Ask user Y/N before renaming                         |     N/A      |
 | Non-Functional       | Handle invalid folder paths                           		  | Show an error message if folder doesn’t exist        |     N/A      |
