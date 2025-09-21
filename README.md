@@ -20,7 +20,7 @@ FileRenamer project 1 out of 100 microprojects in C#
 
 #features
 | Requirement Type     | Description                                                | Notes / Example |                                     | Accomplished | 
-|---------------------|-------------------------------------------------------------|-------------------------------------------------------|              |
+|----------------------|------------------------------------------------------------|-------------------------------------------------------|--------------|
 | Functional           | User inputs a folder path                             		  | Only files in the selected folder, no subfolders |    |              |
 | Functional           | Rename all files with a sequential number             		  | e.g., File_1.txt, File_2.txt |                        |              |
 | Functional           | Optional prefix for filenames                         		  | User can enter a prefix like Report_ |                |              |
