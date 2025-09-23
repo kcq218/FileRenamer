@@ -2,6 +2,6 @@
 {
     public interface IPreviewService
     {
-        public void Preview();
+        public void Preview(string folderPath, string pattern);
     }
 }
