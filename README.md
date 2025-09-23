@@ -48,7 +48,7 @@ FileRenamer project 1 out of 100 microprojects in C#
 ```text
 Example output or screenshot:
 
-## Features
+## Lessons
 -Domain should not reference any other layer
 -Application can have it's own interface folder to avoid using Domain's
 -Value object represents a concept, like a file naming patter, a file extension...etc
