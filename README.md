@@ -18,7 +18,7 @@ FileRenamer project 1 out of 100 microprojects in C#
 ## Demo
 *Optional*: Add screenshots, GIFs, or a link to a live demo if available.
 
-##features
+## features
 | Requirement Type     | Description                                                | Notes / Example                                      | Accomplished | 
 |----------------------|------------------------------------------------------------|------------------------------------------------------|--------------|
 | Functional           | User inputs a folder path                             		  | Only files in the selected folder, no subfolders     |     N/A      |
