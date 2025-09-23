@@ -44,10 +44,6 @@ FileRenamer project 1 out of 100 microprojects in C#
 | Optional Feature     | Batch undo                                         		    | Undo multiple past renaming operations               |     N/A      |
 | Optional Feature     | Save renaming rules                                		    | Configuration file for repeated use                  |     N/A      |
 
-
-```text
-Example output or screenshot:
-
 ## Lessons
 -Domain should not reference any other layer
 -Application can have it's own interface folder to avoid using Domain's
@@ -59,6 +55,10 @@ Example output or screenshot:
 -Commands should only hold data no logic
 -A Command is a representation of an intent
 -you can use provider.GetRequiredService to inject constructor at top level
+```text
+Example output or screenshot:
+
+
 
 
 
