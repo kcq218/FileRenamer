@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FileRenamer": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
