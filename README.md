@@ -12,13 +12,14 @@ FileRenamer project 1 out of 100 microprojects in C#
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+- [Lessons](#lessons)
 
 ---
 
 ## Demo
 *Optional*: Add screenshots, GIFs, or a link to a live demo if available.
 
-## features
+## Features
 | Requirement Type     | Description                                                | Notes / Example                                      | Accomplished | 
 |----------------------|------------------------------------------------------------|------------------------------------------------------|--------------|
 | Functional           | User inputs a folder path                             		  | Only files in the selected folder, no subfolders     |     N/A      |
@@ -46,3 +47,18 @@ FileRenamer project 1 out of 100 microprojects in C#
 
 ```text
 Example output or screenshot:
+
+## Features
+-Domain should not reference any other layer
+-Application can have it's own interface folder to avoid using Domain's
+-Value object represents a concept, like a file naming patter, a file extension...etc
+- No identity (no ID or unique reference)
+- Immutable (once created, never changes)
+- Equality by value (not by reference)
+- Self-validating (can enforce rules in constructor)
+-Commands should only hold data no logic
+-A Command is a representation of an intent
+-you can use provider.GetRequiredService to inject constructor at top level
+
+
+
