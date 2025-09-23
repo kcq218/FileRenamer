@@ -1,0 +1,7 @@
+﻿namespace FileRenamer.Domain.Interfaces
+{
+    public interface IRenameService
+    {
+        public void Rename();
+    }
+}

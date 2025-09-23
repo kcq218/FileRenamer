@@ -15,11 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Commands\" />
-    <Folder Include="Application\Handlers\" />
     <Folder Include="Application\DTOs\" />
     <Folder Include="Domain\Entities\" />
     <Folder Include="Domain\Services\" />
+    <Folder Include="Domain\ValueObjects\" />
     <Folder Include="Infrastructure\FileSystem\" />
     <Folder Include="Tests\" />
   </ItemGroup>
