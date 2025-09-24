@@ -55,6 +55,9 @@ FileRenamer project 1 out of 100 microprojects in C#
 -Commands should only hold data no logic
 -A Command is a representation of an intent
 -you can use provider.GetRequiredService to inject constructor at top level
+09/23/25- project hours: 5 hours
+-always use interface, and register them with <interface,implementation>
+-if you need to use them at the top level use provider.GetRequiredServices<interface> instead of new
 ```text
 Example output or screenshot:
 
