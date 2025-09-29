@@ -5,10 +5,13 @@ FROM mcr.microsoft.com/dotnet/runtime:8.0 AS base
 USER $APP_UID
 WORKDIR /app
 
-
+# create directory for files
+RUN mkdir -p /app/files_to_rename && rm -rf /app/files_to_rename/*
+COPY *.txt /app/files_to_rename/
 # This stage is used to build the service project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
+ARG BUILD_CONFIGURATION=Debug
+#ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["FileRenamer.csproj", "."]
 RUN dotnet restore "./FileRenamer.csproj"
