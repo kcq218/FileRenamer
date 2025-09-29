@@ -23,14 +23,24 @@ var handler = provider.GetRequiredService<IPreviewRenameHandler>();
 var previewService = provider.GetRequiredService<IPreviewService>();
 var command = new PreviewRenameCommand();
 
+try
+{
+    Console.WriteLine("Hello, User Please input the directory where the file should be renamed");
+    var directory = Console.ReadLine();
+    command.FolderPath = directory;
 
-Console.WriteLine("Hello, User Please input the directory where the file should be renamed");
-var directory = Console.ReadLine();
-command.FolderPath = directory;
+    Console.WriteLine("what name would you like to rename it to");
+    var pattern = Console.ReadLine();
+    command.Pattern = pattern;
 
-Console.WriteLine("what name would you like to rename it to");
-var pattern = Console.ReadLine();
-command.Pattern = pattern;
+    handler.Handle(command, previewService);
 
-handler.Handle(command, previewService);
+    Console.WriteLine("Would you like to go ahead and rename files?");
+    var executeRenameYesorNo = Console.ReadLine();
+
+}
+catch (Exception e)
+{
+    Console.WriteLine(e);
+}
 

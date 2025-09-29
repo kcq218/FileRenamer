@@ -15,22 +15,30 @@ namespace FileRenamer.Domain.Services
         {
             var fileInfoList = _fileSystem.GetFiles(folderPath);
             var results = new List<string>();
-
             var current = 0;
+            Console.WriteLine("Preview of files");
 
             while (current < fileInfoList.Count)
             {
                 var name = pattern;
+                var fullFolderPath = $"{folderPath}/{name}.txt";
 
                 if (current > 0)
                 {
                     name += $"_{current + 1}";
-                    Console.WriteLine(name);
+                    fullFolderPath = $"{folderPath}/{name}.txt";
                 }
 
-            }
+                if(File.Exists(fullFolderPath))
+                {
+                    Console.WriteLine($"preview failed {fullFolderPath} already exists");
+                }
 
-            Console.ReadLine();
+                Console.WriteLine(fullFolderPath);
+
+                ++current;
+
+            }
         }
     }
 }
