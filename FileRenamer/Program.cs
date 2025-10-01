@@ -14,29 +14,41 @@ services.AddSingleton<IFileSystem, LocalFileSystem>();
 services.AddSingleton<IPreviewRenameHandler, PreviewRenameHandler>();
 services.AddSingleton<IFileRenameHandler, FileRenameHandler>();
 services.AddSingleton<IPreviewService, PreviewService>();
-//services.AddSingleton<IRenameService, RenameService>();
+services.AddSingleton<IRenameService, RenameService>();
 
 var provider = services.BuildServiceProvider();
 
 // Resolve your top-level handler
-var handler = provider.GetRequiredService<IPreviewRenameHandler>();
+var previewHandler = provider.GetRequiredService<IPreviewRenameHandler>();
+var fileRenameHandler = provider.GetRequiredService<IFileRenameHandler>();
 var previewService = provider.GetRequiredService<IPreviewService>();
-var command = new PreviewRenameCommand();
+var fileRenameService = provider.GetRequiredService<IRenameService>();
+var previewCommand = new PreviewRenameCommand();
+var fileRenameCommand = new FileRenameCommand();
 
 try
 {
     Console.WriteLine("Hello, User Please input the directory where the file should be renamed");
     var directory = Console.ReadLine();
-    command.FolderPath = directory;
+    previewCommand.FolderPath = directory;
+    fileRenameCommand.FolderPath = directory;
 
     Console.WriteLine("what name would you like to rename it to");
     var pattern = Console.ReadLine();
-    command.Pattern = pattern;
+    previewCommand.Pattern = pattern;
+    fileRenameCommand.Pattern = pattern;
 
-    handler.Handle(command, previewService);
+    previewHandler.Handle(previewCommand, previewService);
 
-    Console.WriteLine("Would you like to go ahead and rename files?");
+    Console.WriteLine("Would you like to go ahead and rename files? Answer with YES or NO");
     var executeRenameYesorNo = Console.ReadLine();
+
+    if (executeRenameYesorNo == "YES")
+    {
+        fileRenameHandler.Handle(fileRenameCommand, fileRenameService);
+    }
+
+    Console.WriteLine("Finished Program");
 
 }
 catch (Exception e)

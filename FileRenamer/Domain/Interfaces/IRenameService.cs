@@ -2,6 +2,6 @@
 {
     public interface IRenameService
     {
-        public void Rename();
+        public void Rename(string folderPath, string pattern);
     }
 }

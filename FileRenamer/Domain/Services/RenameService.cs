@@ -2,24 +2,25 @@
 
 namespace FileRenamer.Domain.Services
 {
-    public class PreviewService : IPreviewService
+    public class RenameService : IRenameService
     {
 
         IFileSystem _fileSystem;
-        public PreviewService(IFileSystem fileSystem)
+        public RenameService(IFileSystem fileSystem)
         {
             _fileSystem = fileSystem;
         }
 
-        public void Preview(string folderPath, string pattern)
+        public void Rename(string folderPath, string pattern)
         {
             var fileInfoList = _fileSystem.GetFiles(folderPath);
             var results = new List<string>();
             var current = 0;
-            Console.WriteLine("Preview of files");
+            Console.WriteLine("Renaming Files");
 
             while (current < fileInfoList.Count)
             {
+                var currentFolderPath = $"{folderPath}/{fileInfoList[current].Name}";
                 var name = pattern;
                 var fullFolderPath = $"{folderPath}/{name}.txt";
 
@@ -29,16 +30,24 @@ namespace FileRenamer.Domain.Services
                     fullFolderPath = $"{folderPath}/{name}.txt";
                 }
 
-                if (File.Exists(fullFolderPath))
+                if (!File.Exists(fullFolderPath))
                 {
-                    Console.WriteLine($"preview failed {fullFolderPath} already exists");
+                    File.Move(currentFolderPath, fullFolderPath);
+
+                }
+                else
+                {
+                    Console.WriteLine($"rename failed {fullFolderPath} already exists");
                 }
 
-                Console.WriteLine(fullFolderPath);
+                Console.WriteLine($"Old Path: {currentFolderPath} new Path:{fullFolderPath}");
 
                 ++current;
-
             }
+
+            Console.WriteLine("Finish renaming files Press any button to exit");
+
+            Console.ReadLine();
         }
     }
 }
