@@ -53,8 +53,8 @@ FileRenamer project 1 of microprojects in C#
 -you can use provider.GetRequiredService to inject constructor at top level
 
 09/23/25 - project hours: 5 hours
--always use interface, and register them with <interface,implementation>
--if you need to use them at the top level use provider.GetRequiredServices<interface> instead of new
+- always use interface, and register them with <interface,implementation>
+- if you need to use them at the top level use provider.GetRequiredServices<interface> instead of new
 
 09/30/25 - project hours: 8 hours
 - use docker command build with period at end like ex: docker build -t file-renamer .
